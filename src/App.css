@@ -1,0 +1,388 @@
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#e66465, #9198e5);
+  overflow-y: hidden;
+}
+
+.completed-container,
+.quiz-question-container,
+.quiz-container,
+.homepage-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homepage-container h1{
+  font-size: 5rem;
+  
+}
+
+.question-button {
+  margin-top: 15px;
+  padding-left: 55px;
+  padding-right: 55px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  width: 1rem;
+  font-size: 30px;
+  display: flex;
+  
+  justify-content: center;
+
+  border-radius: 8px;
+  background-color: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  animation: button 1s linear 0s infinite alternate;
+  border: 2px solid white;
+  font-weight: bold;
+}
+
+.quiz-question-container p:hover {
+  cursor: pointer;
+  animation: buttonTest 1s linear 0s infinite alternate;
+  color: white;
+}
+
+.quiz-question-container p:focus {
+  color: white;
+}
+
+/* main title */
+
+.homepage-title
+{
+  letter-spacing: 10px;
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes button {
+  from {color: #84ff3d}
+  to {color: #2eabff}
+}
+
+@keyframes buttonTest {
+  from {background-color: #84ff3d}
+  to {background-color: #2eabff}
+}
+
+/* start button */
+
+.homepage-button {
+  color: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  animation: button 1s linear 0s infinite alternate;
+  font-size: 60px;
+}
+
+.tooltip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 290px;
+
+  background-color: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  animation: button 1s linear 0s infinite alternate;
+  -webkit-text-stroke: 0.1px silver;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 30px;
+  
+
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* questions title */
+
+.question-title {
+  font-size: 2rem;
+  letter-spacing: 10px;
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
+  display: inline-block;
+  
+}
+
+.currently-selected{
+  margin-top: 0.1rem;
+  letter-spacing: 5px;
+   background-color: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  animation: button 1s linear 0s infinite alternate;
+}
+
+.completed-container h2,
+.completed-container h1 {
+  letter-spacing: 5px;
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
+  display: inline-block;
+      font-size: 3rem;
+}
+
+.completed-container h2 {
+  font-size: 20px;
+  line-height: 50px;
+}
+
+.restart-button svg {
+  font-size: 35px;
+  color: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  animation: button 1s linear 0s infinite alternate;
+}
+
+.restart-button svg:hover {
+  cursor: pointer;
+  animation: rotateZ 3s infinite linear, button 1s linear 0s infinite alternate;
+
+}
+
+@-webkit-keyframes rotateZ {
+  to { -webkit-transform: rotateZ(-360deg); }
+}
+@keyframes rotateZ {
+  to { transform: rotateZ(-360deg); }
+}
+
+.bottom-button {
+  margin-top: 15px;
+  padding-left: 55px;
+  padding-right: 55px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-bottom: 70px;
+  width: 80px;
+  font-size: 15px;
+
+  border-radius: 8px;
+  background-color: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  animation: button 1s linear 0s infinite alternate;
+  border: 2px solid white;
+  font-weight: bold;
+  
+}
+
+#wrong-questions {
+  font-size: 15px;
+}
+
+.tooltip2 svg{
+  background-color: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  animation: button 1s linear 0s infinite alternate;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+
+.tooltip2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  
+}
+
+.tooltip2 .tooltiptext {
+  visibility: hidden;
+  width: 290px;
+
+  background-color: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  animation: button 1s linear 0s infinite alternate;
+  -webkit-text-stroke: 0.1px silver;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 30px;
+  
+
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+}
+
+.tooltip2:hover .tooltiptext {
+  visibility: visible;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
+
+.x-button:hover {
+color: #9198e5;
+}
+
+.x-button {
+  color: #e66465;
+  -webkit-text-stroke: 1px black;
+}
+
+.list-of-questions {
+  -webkit-text-stroke: 0.2px black;
+}
+
+::-webkit-scrollbar {
+  color: white;
+}
+
+.big-header {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 88.5%;
+  left: 1.5%;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  animation: button 1s linear 0s infinite alternate;
+}
+
+.big-header a {
+  text-decoration: none;
+  color: white;
+  padding-left: 5px;
+  background-color: linear-gradient(
+    -225deg,
+    #84ff3d 0%,
+    #2eabff 29%,
+    #84ff3d 67%,
+    #2eabff 100%
+  );
+  animation: button 1s linear 0s infinite alternate;
+}
